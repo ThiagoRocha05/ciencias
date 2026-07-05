@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVALIAÇÃO DE CIÊNCIAS - PRIMEIRO ANO</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f9fa;
+            color: #000000;
+            margin: 0;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+        .exam-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            padding: 50px 40px;
+            position: relative;
+        }
+        .institution-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .exam-meta-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 30px;
+            border-bottom: 3px double #000000;
+            padding-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .student-info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+        }
+        .student-info-table td {
+            border: 1px solid #000000;
+            padding: 12px;
+            font-size: 12pt;
+            text-transform: uppercase;
+        }
+        .system-widgets {
+            background-color: #fcfcfc;
+            border: 1px dashed #000000;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            font-size: 11pt;
+            display: flex;
+            justify-content: space-between;
+        }
+        .instructions-block {
+            font-size: 11pt;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+        .question-wrapper {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dotted #dddddd;
+        }
+        .question-wrapper:last-of-type {
+            border-bottom: none;
+        }
+        .question-heading {
+            font-size: 13pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .graphic-resource {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            max-height: 280px;
+            margin: 18px 0;
+            border: 1px solid #000000;
+            object-fit: cover;
+        }
+        .alternatives-container {
+            margin-left: 10px;
+        }
+        .alternative-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 12pt;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .alternative-row:hover {
+            background-color: #f5f5f5;
+        }
+        .alternative-row input[type="radio"] {
+            margin-top: 5px;
+            margin-right: 12px;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .text-input-container {
+            margin-left: 10px;
+            margin-top: 15px;
+            font-size: 12pt;
+        }
+        .exam-text-input {
+            border: none;
+            border-bottom: 1px solid #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13pt;
+            width: 300px;
+            padding: 4px 8px;
+            outline: none;
+            background-color: transparent;
+            color: #000000;
+            text-transform: uppercase; /* FORÇA LETRA BASTÃO NA DIGITAÇÃO */
+        }
+        .exam-text-input:focus {
+            border-bottom: 2px solid #000000;
+        }
+        .text-correction-feedback {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .control-panel {
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #000000;
+            padding-top: 30px;
+        }
+        .btn-engine {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 14px 40px;
+            font-size: 13pt;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px;
+            transition: all 0.2s ease;
+        }
+        .btn-engine:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        #btn-reset {
+            border-color: #888888;
+            color: #555555;
+            display: none;
+        }
+        #btn-reset:hover {
+            background-color: #888888;
+            color: #ffffff;
+        }
+        .dashboard-result {
+            display: none;
+            border: 3px solid #000000;
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: #fafafa;
+            text-transform: uppercase;
+        }
+        .dashboard-title {
+            font-size: 16pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .metric-line {
+            font-size: 13pt;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .metric-highlight {
+            font-weight: bold;
+            font-size: 15pt;
+        }
+        .state-correct {
+            background-color: #e6f4ea !important;
+            border: 1px solid #137333 !important;
+            color: #137333;
+            font-weight: bold;
+        }
+        .state-wrong {
+            background-color: #fce8e6 !important;
+            border: 1px solid #c5221f !important;
+            color: #c5221f;
+        }
+        .input-correct {
+            background-color: #e6f4ea !important;
+            border-bottom: 2px solid #137333 !important;
+            color: #137333;
+        }
+        .input-wrong {
+            background-color: #fce8e6 !important;
+            border-bottom: 2px solid #c5221f !important;
+            color: #c5221f;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .exam-container {
+                border: none;
+                padding: 0;
+            }
+            .btn-engine, .system-widgets, .dashboard-result {
+                display: none !important;
+            }
+            .exam-text-input {
+                border-bottom: 1px solid #000000 !important;
+                background-color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="exam-container">
+    <div class="institution-header">AVALIAÇÃO DE CIÊNCIAS DA NATUREZA</div>
+    <div class="exam-meta-title">MÓDULOS 5 E 6: OS AMBIENTES E OS SERES VIVOS</div>
+
+    <table class="student-info-table">
+        <tr>
+            <td colspan="2"><strong>ESTUDANTE:</strong> HELENA / VALENTINA</td>
+            <td style="width: 30%;"><strong>DATA:</strong> <span id="current-date">____/____/2026</span></td>
+        </tr>
+        <tr>
+            <td style="width: 45%;"><strong>ANO:</strong> 1º ANO DO ENSINO FUNDAMENTAL</td>
+            <td style="width: 30%;"><strong>BIMESTRE:</strong> 2º BIMESTRE</td>
+            <td><strong>NOTA:</strong> <span id="grade-slot" style="font-weight: bold;">_________</span></td>
+        </tr>
+    </table>
+
+    <div class="system-widgets">
+        <div><strong>STATUS DA PROVA:</strong> <span id="status-text">EM ANDAMENTO</span></div>
+        <div><strong>TEMPO DE ESTUDO:</strong> <span id="timer-text">00:00</span></div>
+    </div>
+
+    <div class="instructions-block">
+        <strong>COMO FAZER A PROVA:</strong> LEIA COM ATENÇÃO CADA PERGUNTA. ALGUMAS QUESTÕES SÃO DE MARCAR UM X NA RESPOSTA CERTA. OUTRAS QUESTÕES TÊM UMA LINHA PARA VOCÊ DIGITAR A PALAVRA CORRETA E TREINAR A SUA ESCRITA. NO FINAL, CLIQUE NO BOTÃO PARA CORRIGIR A SUA PROVA.
+    </div>
+
+    <div id="dashboard-result" class="dashboard-result">
+        <div class="dashboard-title">RESULTADO DA PROVA</div>
+        <div class="metric-line">VOCÊ ACERTOU <span id="metric-score" class="metric-highlight">0</span> DE <span id="metric-total">0</span> QUESTÕES!</div>
+        <div class="metric-line">NOTA FINAL: <span id="metric-grade" class="metric-highlight">0.0</span> / 10.0</div>
+        <div class="metric-line" id="metric-feedback" style="margin-top: 15px; font-style: italic;"></div>
+    </div>
+
+    <form id="form-exam-engine">
+        
+        <div class="question-wrapper" data-qid="q1" data-qtype="radio">
+            <div class="question-heading">1. UMA FLORESTA QUE TEM MUITAS ÁRVORES, RIOS LIMPOS E ANIMAIS, ONDE O SER HUMANO NÃO CONSTRUIU ESTRADAS, PRÉDIOS OU CASAS, É UM EXEMPLO DE:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80" alt="Floresta">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q1" value="A"> UM AMBIENTE CONSTRUÍDO.</label>
+                <label class="alternative-row"><input type="radio" name="q1" value="B"> UM AMBIENTE NATURAL.</label>
+                <label class="alternative-row"><input type="radio" name="q1" value="C"> UM AMBIENTE MODIFICADO.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q2" data-qtype="radio">
+            <div class="question-heading">2. QUANDO AS PESSOAS MUDAM A NATUREZA CONSTRUINDO CASAS, PRÉDIOS, RUAS E PONTES, NÓS DIZEMOS QUE ESSE LUGAR VIROU:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80" alt="Cidade">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q2" value="A"> UM AMBIENTE CONSTRUÍDO OU MODIFICADO.</label>
+                <label class="alternative-row"><input type="radio" name="q2" value="B"> UM AMBIENTE NATURAL.</label>
+                <label class="alternative-row"><input type="radio" name="q2" value="C"> UM AMBIENTE QUE NUNCA MUDOU.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q3" data-qtype="text">
+            <div class="question-heading">3. NA NATUREZA EXISTEM ELEMENTOS VIVOS E ELEMENTOS NÃO VIVOS. QUAL É O NOME DO ELEMENTO NÃO VIVO QUE NÃO CONSEGUIMOS ENXERGAR, MAS QUE USAMOS PARA RESPIRAR E QUE MOVE O VENTO? DIGITE A PALAVRA ABAIXO:</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q3" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q3"></span>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q4" data-qtype="radio">
+            <div class="question-heading">4. QUAL É A PRINCIPAL DIFERENÇA ENTRE UM SER VIVO (COMO UM CACHORRINHO) E UM ELEMENTO NÃO VIVO (COMO UMA ROCHA)?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q4" value="A"> OS SERES VIVOS PASSAM POR UM CICLO DE VIDA: ELES NASCEM, CRESCEM, PODEM TER FILHOTES E MORREM.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="B"> OS SERES VIVOS FICAM SEMPRE DO MESMO TAMANHO E NUNCA MUDAM.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="C"> OS ELEMENTOS NÃO VIVOS PRECISAM COMER E BEBER ÁGUA PARA VIVER.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q5" data-qtype="radio">
+            <div class="question-heading">5. QUANDO PLANTAMOS UMA SEMENTINHA DE FEIJÃO NA HORTA DA ESCOLA, QUAL É A ORDEM CERTA DAS FASES DA VIDA DELA?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1000&q=80" alt="Planta crescendo">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q5" value="A"> ELA MORRE, NASCE, FICA ADULTA E CRESCE.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="B"> ELA NASCE, CRESCE, PODE SE REPRODUZIR, ENVELHECE E MORRE.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="C"> ELA ENVELHECE, NASCE E MORRE.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q6" data-qtype="text">
+            <div class="question-heading">6. UMA CRIANÇA QUE TEM 7 ANOS DE IDADE, ESTUDA, BRINCA E ESTÁ CRESCENDO A CADA DIA SE ENCONTRA EM QUAL FASE DA VIDA? DIGITE O NOME DESSA FASE ABAIXO:</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q6" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q6"></span>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q7" data-qtype="radio">
+            <div class="question-heading">7. SE UMA PLANTA DE VASO FOR COLOCADA DENTRO DE UM ARMÁRIO ESCURO E NINGUÉM COLOCAR ÁGUA NELA POR MUITO TEMPO, O QUE VAI ACONTECER?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Planta murcha">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q7" value="A"> A PLANTA VAI CONTINUAR BONITA PORQUE NÃO PRECISA DE LUZ E NEM DE ÁGUA.</label>
+                <label class="alternative-row"><input type="radio" name="q7" value="B"> A PLANTA VAI MURCHAR E MORRER, PORQUE OS SERES VIVOS PRECISAM DE ÁGUA E DE LUZ SOLAR PARA VIVER.</label>
+                <label class="alternative-row"><input type="radio" name="q7" value="C"> A PLANTA VAI SE TRANSFORMAR EM UMA PEDRA.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q8" data-qtype="radio">
+            <div class="question-heading">8. O SOLO É A TERRA ONDE PISAMOS. PARA QUE SERVEM AS RAÍZES DAS PLANTAS EM RELAÇÃO AO SOLO?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q8" value="A"> ELAS PRENDEM A PLANTA NO SOLO E RETIRAM DELE A ÁGUA E OS NUTRIENTES.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="B"> ELAS SERVEM PARA TRANSFORMAR A TERRA SECA EM ÁGUA DO MAR.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="C"> ELAS SERVEM PARA ESCONDER OS INSETOS EMBAIXO DA TERRA.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q9" data-qtype="radio">
+            <div class="question-heading">9. PARA MANTER A TERRA SAUDÁVEL PARA AS PLANTAS E ANIMAIS QUE VIVEM NELA, QUAL DEESES ELEMENTOS NÃO DEVE SER JOGADO NO SOLO DE JEITO NENHUM?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q9" value="A"> MINHOCAS QUE AJUDAM A MEXER A TERRA.</label>
+                <label class="alternative-row"><input type="radio" name="q9" value="B"> ÁGUA DA CHUVA PARA MOLHAR AS PLANTAS.</label>
+                <label class="alternative-row"><input type="radio" name="q9" value="C"> LIXO E MATERIAIS POLUÍDOS QUE ESTRAGAM A NATUREZA.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q10" data-qtype="text">
+            <div class="question-heading">10. O CAMELO É UM ANIMAL QUE VIVE MUITO BEM EM UM LUGAR MUITO QUENTE, SECO E CHEIO DE AREIA, ONDE QUASE NÃO CHOVE. DIGITE O NOME DESSE AMBIENTE ABAIXO:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=1000&q=80" alt="Camelo">
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q10" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q10"></span>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q11" data-qtype="radio">
+            <div class="question-heading">11. COMO CHAMAMOS OS AMBIENTES DO NOSSO PLANETA QUE SÃO COBERTOS DE ÁGUA, COMO OS RIOS, LAGOS E MARES?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q11" value="A"> AMBIENTES TERRESTRES.</label>
+                <label class="alternative-row"><input type="radio" name="q11" value="B"> AMBIENTES AQUÁTICOS.</label>
+                <label class="alternative-row"><input type="radio" name="q11" value="C"> AMBIENTES SECOS.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q12" data-qtype="text">
+            <div class="question-heading">12. OS AMBIENTES AQUÁTICOS PODEM TER TIPOS DE ÁGUAS DIFERENTES. OS RIOS, AS CACHOEIRAS E OS LAGOS SÃO FORMADOS POR QUAL TIPO DE ÁGUA? DIGITE A PALAVRA (DOCE OU SALGADA):</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80" alt="Rio">
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q12" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q12"></span>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q13" data-qtype="radio">
+            <div class="question-heading">13. OS OCEANOS E OS MARES COBREM A MAIOR PARTE DO PLANETA TERRA. QUE TIPO DE ÁGUA NÓS ENCONTRAMOS NELES?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1000&q=80" alt="Mar">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q13" value="A"> ÁGUA SALGADA.</label>
+                <label class="alternative-row"><input type="radio" name="q13" value="B"> ÁGUA DOCE IGUAL A DO RIO.</label>
+                <label class="alternative-row"><input type="radio" name="q13" value="C"> ÁGUA CHEIA DE LODO SEM SAL.</label>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q14" data-qtype="text">
+            <div class="question-heading">14. A PLANTA VITÓRIA-RÉGIA E O GRANDE PEIXE PIRARUCU SÃO SERES VIVOS QUE MORAM NA ÁGUA DOCE. ELES SÃO TÍPICOS DE QUAL FAMOSO RIO BRASILEIRO? DIGITE O NOME DELE ABAIXO:</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q14" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q14"></span>
+            </div>
+        </div>
+
+        <div class="question-wrapper" data-qid="q15" data-qtype="radio">
+            <div class="question-heading">15. NEM TODOS OS ANIMAIS QUE VIVEM NA ÁGUA RESPIRAM DO MESMO JEITO. COMO O PEIXE-BOI E O POLVO FAZEM PARA RESPIRAR?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q15" value="A"> O PEIXE-BOI PRECISA SUBIR ATÉ A SUPERFÍCIE PARA RESPIRAR O AR DO CÉU, ENQUANTO O POLVO CONSEGUE RESPIRAR O TEMPO TODO EMBAIXO DA ÁGUA.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="B"> O POLVO PRECISA SAIR DA ÁGUA PARA RESPIRAR NA TERRA E O PEIXE-BOI NUNCA RESPIRA AR.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="C"> OS DOIS CONSEGUEM VOAR PARA RESPIRAR NO AR FORA DA ÁGUA.</label>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <button type="button" id="btn-submit" class="btn-engine" onclick="processEvaluationEngine()">CORRIGIR PROVA</button>
+            <button type="button" id="btn-reset" class="btn-engine" onclick="resetEvaluationEngine()">REFAZER PROVA</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const answerKey = {
+        q1: "B", q2: "A", q3: "ar", q4: "A", q5: "B",
+        q6: "infancia", q7: "B", q8: "A", q9: "C", q10: "deserto",
+        q11: "B", q12: "doce", q13: "A", q14: "amazonas", q15: "A"
+    };
+
+    let timerInterval = null;
+    let secondsElapsed = 0;
+    let examActive = true;
+
+    window.addEventListener('DOMContentLoaded', () => {
+        startTimerEngine();
+        loadSavedState();
+        setupStateListeners();
+    });
+
+    function startTimerEngine() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!examActive) return;
+            secondsElapsed++;
+            const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+            const secs = String(secondsElapsed % 60).padStart(2, '0');
+            document.getElementById("timer-text").textContent = `${mins}:${secs}`;
+        }, 1000);
+    }
+
+    function setupStateListeners() {
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (!examActive) return;
+                localStorage.setItem(`exam_save_${radio.name}`, radio.value);
+            });
+        });
+
+        const textInputs = document.querySelectorAll('.exam-text-input');
+        textInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (!examActive) return;
+                localStorage.setItem(`exam_save_${input.name}`, input.value);
+            });
+        });
+    }
+
+    function loadSavedState() {
+        for (let q in answerKey) {
+            const savedValue = localStorage.getItem(`exam_save_${q}`);
+            if (savedValue) {
+                const radioTarget = document.querySelector(`input[name="${q}"][value="${savedValue}"]`);
+                if (radioTarget) {
+                    radioTarget.checked = true;
+                } else {
+                    const textTarget = document.querySelector(`input[name="${q}"][type="text"]`);
+                    if (textTarget) textTarget.value = savedValue;
+                }
+            }
+        }
+    }
+
+    function normalizeString(str) {
+        if (!str) return "";
+        return str.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function processEvaluationEngine() {
+        examActive = false;
+        clearInterval(timerInterval);
+        
+        const form = document.getElementById("form-exam-engine");
+        let rawScore = 0;
+        const totalItems = Object.keys(answerKey).length;
+
+        for (let q in answerKey) {
+            const wrapper = document.querySelector(`[data-qid="${q}"]`);
+            const type = wrapper.getAttribute("data-qtype");
+
+            if (type === "radio") {
+                const selectedRadio = form.elements[q] ? form.elements[q].value : null;
+                const rows = wrapper.querySelectorAll(".alternative-row");
+
+                rows.forEach(row => {
+                    const radioInput = row.querySelector("input");
+                    radioInput.disabled = true;
+
+                    if (radioInput.value === answerKey[q]) {
+                        row.classList.add("state-correct");
+                    } else if (selectedRadio === radioInput.value && selectedRadio !== answerKey[q]) {
+                        row.classList.add("state-wrong");
+                    }
+                });
+
+                if (selectedRadio === answerKey[q]) rawScore++;
+
+            } else if (type === "text") {
+                const inputElement = wrapper.querySelector(".exam-text-input");
+                inputElement.disabled = true;
+                const userText = normalizeString(inputElement.value);
+                const correctText = normalizeString(answerKey[q]);
+                const feedbackSpan = document.getElementById(`feedback-${q}`);
+
+                if (userText === correctText) {
+                    inputElement.classList.add("input-correct");
+                    feedbackSpan.textContent = "ACERTOU!";
+                    feedbackSpan.style.color = "#137333";
+                    rawScore++;
+                } else {
+                    inputElement.classList.add("input-wrong");
+                    feedbackSpan.textContent = `ERROU (O CERTO É: ${answerKey[q].toUpperCase()})`;
+                    feedbackSpan.style.color = "#c5221f";
+                }
+            }
+        }
+
+        const finalGrade = ((rawScore / totalItems) * 10).toFixed(1);
+        
+        document.getElementById("grade-slot").textContent = `${finalGrade} / 10.0`;
+        document.getElementById("status-text").textContent = "CORRIGIDA";
+
+        document.getElementById("metric-score").textContent = rawScore;
+        document.getElementById("metric-total").textContent = totalItems;
+        document.getElementById("metric-grade").textContent = finalGrade;
+
+        const feedbackSlot = document.getElementById("metric-feedback");
+        if (rawScore === totalItems) {
+            feedbackSlot.textContent = "PARABÉNS! VOCÊ ACERTOU TUDO E SABE TUDO SOBRE A MATÉRIA DE CIÊNCIAS!";
+        } else if (rawScore >= totalItems * 0.7) {
+            feedbackSlot.textContent = "MUITO BEM! VOCÊ TEVE UMA BOA NOTA. OLHE AS QUESTÕES EM VERMELHO PARA APRENDER O QUE ERROU.";
+        } else {
+            feedbackSlot.textContent = "VAMOS TREINAR MAIS UM POUCO? ESTUDE O LIVRO DE CIÊNCIAS E TENTE REFAZER A PROVA DEPOIS.";
+        }
+
+        document.getElementById("dashboard-result").style.display = "block";
+        document.getElementById("btn-submit").style.display = "none";
+        document.getElementById("btn-reset").style.display = "inline-block";
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetEvaluationEngine() {
+        for (let q in answerKey) {
+            localStorage.removeItem(`exam_save_${q}`);
+        }
+
+        examActive = true;
+        secondsElapsed = 0;
+        document.getElementById("timer-text").textContent = "00:00";
+        document.getElementById("status-text").textContent = "EM ANDAMENTO";
+        document.getElementById("grade-slot").textContent = "_________";
+        document.getElementById("dashboard-result").style.display = "none";
+        
+        const form = document.getElementById("form-exam-engine");
+        form.reset();
+
+        document.querySelectorAll(".alternative-row").forEach(row => {
+            row.classList.remove("state-correct", "state-wrong");
+            const input = row.querySelector("input");
+            input.disabled = false;
+        });
+
+        document.querySelectorAll(".exam-text-input").forEach(input => {
+            input.classList.remove("input-correct", "input-wrong");
+            input.disabled = false;
+        });
+
+        document.querySelectorAll(".text-correction-feedback").forEach(span => {
+            span.textContent = "";
+        });
+
+        document.getElementById("btn-submit").style.display = "inline-block";
+        document.getElementById("btn-reset").style.display = "none";
+
+        startTimerEngine();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>

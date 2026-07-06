@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVALIAÇÃO DE CIÊNCIAS - PRIMEIRO ANO</title>
     <style>
         * {
+            box-shadow: none;
             box-sizing: border-box;
         }
         body {
@@ -65,6 +66,7 @@
             font-size: 11pt;
             margin-bottom: 40px;
             text-align: justify;
+            text-transform: uppercase;
         }
         .question-wrapper {
             margin-bottom: 45px;
@@ -79,6 +81,7 @@
             font-weight: bold;
             margin-bottom: 15px;
             text-align: justify;
+            text-transform: uppercase;
         }
         .graphic-resource {
             display: block;
@@ -102,6 +105,7 @@
             border: 1px solid transparent;
             border-radius: 4px;
             transition: background-color 0.2s;
+            text-transform: uppercase;
         }
         .alternative-row:hover {
             background-color: #f5f5f5;
@@ -116,6 +120,7 @@
             margin-left: 10px;
             margin-top: 15px;
             font-size: 12pt;
+            text-transform: uppercase;
         }
         .exam-text-input {
             border: none;
@@ -127,7 +132,7 @@
             outline: none;
             background-color: transparent;
             color: #000000;
-            text-transform: uppercase; /* FORÇA LETRA BASTÃO NA DIGITAÇÃO */
+            text-transform: uppercase;
         }
         .exam-text-input:focus {
             border-bottom: 2px solid #000000;
@@ -240,7 +245,7 @@
 
 <div class="exam-container">
     <div class="institution-header">AVALIAÇÃO DE CIÊNCIAS DA NATUREZA</div>
-    <div class="exam-meta-title">MÓDULOS 5 E 6: OS AMBIENTES E OS SERES VIVOS</div>
+    <div class="exam-meta-title">MÓDULOS 5 E 6 DO LIVRO DIDÁTICO</div>
 
     <table class="student-info-table">
         <tr>
@@ -248,24 +253,24 @@
             <td style="width: 30%;"><strong>DATA:</strong> <span id="current-date">____/____/2026</span></td>
         </tr>
         <tr>
-            <td style="width: 45%;"><strong>ANO:</strong> 1º ANO DO ENSINO FUNDAMENTAL</td>
+            <td style="width: 45%;"><strong>ANO BIOLÓGICO:</strong> 1º ANO DO ENSINO FUNDAMENTAL</td>
             <td style="width: 30%;"><strong>BIMESTRE:</strong> 2º BIMESTRE</td>
-            <td><strong>NOTA:</strong> <span id="grade-slot" style="font-weight: bold;">_________</span></td>
+            <td><strong>NOTA OBTIDA:</strong> <span id="grade-slot" style="font-weight: bold;">_________</span></td>
         </tr>
     </table>
 
     <div class="system-widgets">
-        <div><strong>STATUS DA PROVA:</strong> <span id="status-text">EM ANDAMENTO</span></div>
-        <div><strong>TEMPO DE ESTUDO:</strong> <span id="timer-text">00:00</span></div>
+        <div><strong>ESTADO DA PROVA:</strong> <span id="status-text">EM ANDAMENTO</span></div>
+        <div><strong>CRONÔMETRO DE TREINO:</strong> <span id="timer-text">00:00</span></div>
     </div>
 
     <div class="instructions-block">
-        <strong>COMO FAZER A PROVA:</strong> LEIA COM ATENÇÃO CADA PERGUNTA. ALGUMAS QUESTÕES SÃO DE MARCAR UM X NA RESPOSTA CERTA. OUTRAS QUESTÕES TÊM UMA LINHA PARA VOCÊ DIGITAR A PALAVRA CORRETA E TREINAR A SUA ESCRITA. NO FINAL, CLIQUE NO BOTÃO PARA CORRIGIR A SUA PROVA.
+        <strong>DIRETRIZES DO LIVRO:</strong> RESPONDA AS QUESTÕES DE ACORDO COM AS ATIVIDADES DO SEU LIVRO DE CIÊNCIAS. ALGUMAS QUESTÕES SÃO DE MARCAR X E OUTRAS SÃO DE ESCREVER A PALAVRA COMPLETA NA LINHA.
     </div>
 
     <div id="dashboard-result" class="dashboard-result">
-        <div class="dashboard-title">RESULTADO DA PROVA</div>
-        <div class="metric-line">VOCÊ ACERTOU <span id="metric-score" class="metric-highlight">0</span> DE <span id="metric-total">0</span> QUESTÕES!</div>
+        <div class="dashboard-title">RESULTADO DO EXAME</div>
+        <div class="metric-line">TOTAL DE ACERTOS: <span id="metric-score" class="metric-highlight">0</span> DE <span id="metric-total">0</span> QUESTÕES</div>
         <div class="metric-line">NOTA FINAL: <span id="metric-grade" class="metric-highlight">0.0</span> / 10.0</div>
         <div class="metric-line" id="metric-feedback" style="margin-top: 15px; font-style: italic;"></div>
     </div>
@@ -273,154 +278,154 @@
     <form id="form-exam-engine">
         
         <div class="question-wrapper" data-qid="q1" data-qtype="radio">
-            <div class="question-heading">1. UMA FLORESTA QUE TEM MUITAS ÁRVORES, RIOS LIMPOS E ANIMAIS, ONDE O SER HUMANO NÃO CONSTRUIU ESTRADAS, PRÉDIOS OU CASAS, É UM EXEMPLO DE:</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1000&q=80" alt="Floresta">
+            <div class="question-heading">1. DE ACORDO COM O LIVRO, OS ANIMAIS E AS PLANTAS SÃO CLASSIFICADOS COMO:</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q1" value="A"> UM AMBIENTE CONSTRUÍDO.</label>
-                <label class="alternative-row"><input type="radio" name="q1" value="B"> UM AMBIENTE NATURAL.</label>
-                <label class="alternative-row"><input type="radio" name="q1" value="C"> UM AMBIENTE MODIFICADO.</label>
+                <label class="alternative-row"><input type="radio" name="q1" value="A"> SERES VIVOS.</label>
+                <label class="alternative-row"><input type="radio" name="q1" value="B"> ELEMENTOS NÃO VIVOS.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q2" data-qtype="radio">
-            <div class="question-heading">2. QUANDO AS PESSOAS MUDAM A NATUREZA CONSTRUINDO CASAS, PRÉDIOS, RUAS E PONTES, NÓS DIZEMOS QUE ESSE LUGAR VIROU:</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=80" alt="Cidade">
+            <div class="question-heading">2. A LUZ DO SOL, O AR, A ÁGUA, AS ROCHAS E O SOLO SÃO EXEMPLOS DE:</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q2" value="A"> UM AMBIENTE CONSTRUÍDO OU MODIFICADO.</label>
-                <label class="alternative-row"><input type="radio" name="q2" value="B"> UM AMBIENTE NATURAL.</label>
-                <label class="alternative-row"><input type="radio" name="q2" value="C"> UM AMBIENTE QUE NUNCA MUDOU.</label>
+                <label class="alternative-row"><input type="radio" name="q2" value="A"> SERES VIVOS DO AMBIENTE.</label>
+                <label class="alternative-row"><input type="radio" name="q2" value="B"> ELEMENTOS NÃO VIVOS DO AMBIENTE.</label>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q3" data-qtype="text">
-            <div class="question-heading">3. NA NATUREZA EXISTEM ELEMENTOS VIVOS E ELEMENTOS NÃO VIVOS. QUAL É O NOME DO ELEMENTO NÃO VIVO QUE NÃO CONSEGUIMOS ENXERGAR, MAS QUE USAMOS PARA RESPIRAR E QUE MOVE O VENTO? DIGITE A PALAVRA ABAIXO:</div>
-            <div class="text-input-container">
-                RESPOSTA: <input type="text" name="q3" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
-                <span class="text-correction-feedback" id="feedback-q3"></span>
+        <div class="question-wrapper" data-qid="q3" data-qtype="radio">
+            <div class="question-heading">3. NO EXERCÍCIO DOS ADESIVOS, QUAIS SERES VIVOS FORAM COLOCADOS CORRETAMENTE NO AMBIENTE MARINHO (IMAGEM A)?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1000&q=80" alt="Mar">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q3" value="A"> PEIXES E TARTARUGA.</label>
+                <label class="alternative-row"><input type="radio" name="q3" value="B"> VACA E SER HUMANO.</label>
+                <label class="alternative-row"><input type="radio" name="q3" value="C"> PÁSSAROS E VACA.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q4" data-qtype="radio">
-            <div class="question-heading">4. QUAL É A PRINCIPAL DIFERENÇA ENTRE UM SER VIVO (COMO UM CACHORRINHO) E UM ELEMENTO NÃO VIVO (COMO UMA ROCHA)?</div>
+            <div class="question-heading">4. AINDA NO EXERCÍCIO DOS ADESIVOS, QUAIS SERES VIVOS FAZEM PARTE DO AMBIENTE DA FAZENDA (IMAGEM B)?</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q4" value="A"> OS SERES VIVOS PASSAM POR UM CICLO DE VIDA: ELES NASCEM, CRESCEM, PODEM TER FILHOTES E MORREM.</label>
-                <label class="alternative-row"><input type="radio" name="q4" value="B"> OS SERES VIVOS FICAM SEMPRE DO MESMO TAMANHO E NUNCA MUDAM.</label>
-                <label class="alternative-row"><input type="radio" name="q4" value="C"> OS ELEMENTOS NÃO VIVOS PRECISAM COMER E BEBER ÁGUA PARA VIVER.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="A"> PEIXES E TARTARUGA.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="B"> PÁSSAROS, VACA E SER HUMANO.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q5" data-qtype="radio">
-            <div class="question-heading">5. QUANDO PLANTAMOS UMA SEMENTINHA DE FEIJÃO NA HORTA DA ESCOLA, QUAL É A ORDEM CERTA DAS FASES DA VIDA DELA?</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1000&q=80" alt="Planta crescendo">
+            <div class="question-heading">5. MARQUE A ALTERNATIVA VERDADEIRA SOBRE A FOTO DA MÃE E DO FILHO NO MUSEU DE HISTÓRIA NATURAL:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1000&q=80" alt="Museu">
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q5" value="A"> ELA MORRE, NASCE, FICA ADULTA E CRESCE.</label>
-                <label class="alternative-row"><input type="radio" name="q5" value="B"> ELA NASCE, CRESCE, PODE SE REPRODUZIR, ENVELHECE E MORRE.</label>
-                <label class="alternative-row"><input type="radio" name="q5" value="C"> ELA ENVELHECE, NASCE E MORRE.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="A"> O MENINO ESTÁ NA FASE ADULTA.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="B"> O MENINO ESTÁ NA FASE DE CRESCIMENTO.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="C"> A MÃE DO MENINO COMPLETOU TODO O SEU CICLO DE VIDA.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="D"> A MÃE DO MENINO ESTÁ NA FASE DE CRESCIMENTO.</label>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q6" data-qtype="text">
-            <div class="question-heading">6. UMA CRIANÇA QUE TEM 7 ANOS DE IDADE, ESTUDA, BRINCA E ESTÁ CRESCENDO A CADA DIA SE ENCONTRA EM QUAL FASE DA VIDA? DIGITE O NOME DESSA FASE ABAIXO:</div>
-            <div class="text-input-container">
-                RESPOSTA: <input type="text" name="q6" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
-                <span class="text-correction-feedback" id="feedback-q6"></span>
+        <div class="question-wrapper" data-qid="q6" data-qtype="radio">
+            <div class="question-heading">6. VEJA A ATIVIDADE DA PLANTA MURCHA. O QUE PODE TER FALTADO PARA QUE ELA TENHA FICADO DESSE JEITO?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Planta murcha">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q6" value="A"> APENAS O SOLO FIRME.</label>
+                <label class="alternative-row"><input type="radio" name="q6" value="B"> ÁGUA E LUZ DO SOL.</label>
+                <label class="alternative-row"><input type="radio" name="q6" value="C"> APENAS O AR DA SALA.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q7" data-qtype="radio">
-            <div class="question-heading">7. SE UMA PLANTA DE VASO FOR COLOCADA DENTRO DE UM ARMÁRIO ESCURO E NINGUÉM COLOCAR ÁGUA NELA POR MUITO TEMPO, O QUE VAI ACONTECER?</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Planta murcha">
+            <div class="question-heading">7. MARQUE O ITEM QUE NÃO DEVE DE JEITO NENHUM SER ENCONTRADO NO SOLO SAUDÁVEL:</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q7" value="A"> A PLANTA VAI CONTINUAR BONITA PORQUE NÃO PRECISA DE LUZ E NEM DE ÁGUA.</label>
-                <label class="alternative-row"><input type="radio" name="q7" value="B"> A PLANTA VAI MURCHAR E MORRER, PORQUE OS SERES VIVOS PRECISAM DE ÁGUA E DE LUZ SOLAR PARA VIVER.</label>
-                <label class="alternative-row"><input type="radio" name="q7" value="C"> A PLANTA VAI SE TRANSFORMAR EM UMA PEDRA.</label>
+                <label class="alternative-row"><input type="radio" name="7" value="A"> ANIMAIS.</label>
+                <label class="alternative-row"><input type="radio" name="7" value="B"> PLANTAS.</label>
+                <label class="alternative-row"><input type="radio" name="7" value="C"> ROCHAS.</label>
+                <label class="alternative-row"><input type="radio" name="7" value="D"> LIXO.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q8" data-qtype="radio">
-            <div class="question-heading">8. O SOLO É A TERRA ONDE PISAMOS. PARA QUE SERVEM AS RAÍZES DAS PLANTAS EM RELAÇÃO AO SOLO?</div>
+            <div class="question-heading">8. ASSINALE A AFIRMAÇÃO VERDADEIRA SOBRE OS ELEMENTOS NÃO VIVOS DA NATUREZA:</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q8" value="A"> ELAS PRENDEM A PLANTA NO SOLO E RETIRAM DELE A ÁGUA E OS NUTRIENTES.</label>
-                <label class="alternative-row"><input type="radio" name="q8" value="B"> ELAS SERVEM PARA TRANSFORMAR A TERRA SECA EM ÁGUA DO MAR.</label>
-                <label class="alternative-row"><input type="radio" name="q8" value="C"> ELAS SERVEM PARA ESCONDER OS INSETOS EMBAIXO DA TERRA.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="A"> ELES CRESCEM, MAS NUNCA MORREM.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="B"> ELES NASCEM E CRESCEM, MAS NÃO SE REPRODUZEM.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="C"> ELES TÊM UMA FASE EM QUE PODEM SE REPRODUZIR.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="D"> NÃO NASCEM, NÃO CRESCEM, NÃO SE REPRODUZEM NEM MORREM.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q9" data-qtype="radio">
-            <div class="question-heading">9. PARA MANTER A TERRA SAUDÁVEL PARA AS PLANTAS E ANIMAIS QUE VIVEM NELA, QUAL DEESES ELEMENTOS NÃO DEVE SER JOGADO NO SOLO DE JEITO NENHUM?</div>
+            <div class="question-heading">9. CONFORME MOSTRA A CAPA DO MÓDULO 6, A VITÓRIA-RÉGIA É UMA PLANTA QUE VIVE NA:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1517088455889-bfa75135412c?auto=format&fit=crop&w=1000&q=80" alt="Vitoria regia">
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q9" value="A"> MINHOCAS QUE AJUDAM A MEXER A TERRA.</label>
-                <label class="alternative-row"><input type="radio" name="q9" value="B"> ÁGUA DA CHUVA PARA MOLHAR AS PLANTAS.</label>
-                <label class="alternative-row"><input type="radio" name="q9" value="C"> LIXO E MATERIAIS POLUÍDOS QUE ESTRAGAM A NATUREZA.</label>
+                <label class="alternative-row"><input type="radio" name="q9" value="A"> ÁGUA.</label>
+                <label class="alternative-row"><input type="radio" name="q9" value="B"> TERRA SECA.</label>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q10" data-qtype="text">
-            <div class="question-heading">10. O CAMELO É UM ANIMAL QUE VIVE MUITO BEM EM UM LUGAR MUITO QUENTE, SECO E CHEIO DE AREIA, ONDE QUASE NÃO CHOVE. DIGITE O NOME DESSE AMBIENTE ABAIXO:</div>
+        <div class="question-wrapper" data-qid="q10" data-qtype="radio">
+            <div class="question-heading">10. QUAL É O NOME DO SER VIVO QUE APARECE NA IMAGEM DA ATIVIDADE SOBRE O DESERTO?</div>
             <img class="graphic-resource" src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=1000&q=80" alt="Camelo">
-            <div class="text-input-container">
-                RESPOSTA: <input type="text" name="q10" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
-                <span class="text-correction-feedback" id="feedback-q10"></span>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q10" value="A"> SAPO.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="B"> ÁRVORE.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="C"> CAMELO.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="D"> VACA.</label>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q11" data-qtype="radio">
-            <div class="question-heading">11. COMO CHAMAMOS OS AMBIENTES DO NOSSO PLANETA QUE SÃO COBERTOS DE ÁGUA, COMO OS RIOS, LAGOS E MARES?</div>
-            <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q11" value="A"> AMBIENTES TERRESTRES.</label>
-                <label class="alternative-row"><input type="radio" name="q11" value="B"> AMBIENTES AQUÁTICOS.</label>
-                <label class="alternative-row"><input type="radio" name="q11" value="C"> AMBIENTES SECOS.</label>
+        <div class="question-wrapper" data-qid="q11" data-qtype="text">
+            <div class="question-heading">11. TERMINE A LEGENDA DA IMAGEM A DO LIVRO: O RIO É UM EXEMPLO DE AMBIENTE... DIGITE A PALAVRA COMPLETA NO ESPAÇO ABAIXO:</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q11" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q11"></span>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q12" data-qtype="text">
-            <div class="question-heading">12. OS AMBIENTES AQUÁTICOS PODEM TER TIPOS DE ÁGUAS DIFERENTES. OS RIOS, AS CACHOEIRAS E OS LAGOS SÃO FORMADOS POR QUAL TIPO DE ÁGUA? DIGITE A PALAVRA (DOCE OU SALGADA):</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80" alt="Rio">
+            <div class="question-heading">12. TERMINE A LEGENDA DA IMAGEM B DO LIVRO: O DESERTO É UM EXEMPLO DE AMBIENTE... DIGITE A PALAVRA COMPLETA NO ESPAÇO ABAIXO:</div>
             <div class="text-input-container">
-                RESPOSTA: <input type="text" name="q12" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
+                RESPOSTA: <input type="text" name="q12" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
                 <span class="text-correction-feedback" id="feedback-q12"></span>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q13" data-qtype="radio">
-            <div class="question-heading">13. OS OCEANOS E OS MARES COBREM A MAIOR PARTE DO PLANETA TERRA. QUE TIPO DE ÁGUA NÓS ENCONTRAMOS NELES?</div>
-            <img class="graphic-resource" src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?auto=format&fit=crop&w=1000&q=80" alt="Mar">
-            <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q13" value="A"> ÁGUA SALGADA.</label>
-                <label class="alternative-row"><input type="radio" name="q13" value="B"> ÁGUA DOCE IGUAL A DO RIO.</label>
-                <label class="alternative-row"><input type="radio" name="q13" value="C"> ÁGUA CHEIA DE LODO SEM SAL.</label>
+        <div class="question-wrapper" data-qid="q13" data-qtype="text">
+            <div class="question-heading">13. TERMINE A LEGENDA DA IMAGEM C DO LIVRO: O HÁBITAT DO _________ É O RIO OU O MAR. DIGITE O SER VIVO CORRETO ABAIXO:</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q13" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q13"></span>
             </div>
         </div>
 
-        <div class="question-wrapper" data-qid="q14" data-qtype="text">
-            <div class="question-heading">14. A PLANTA VITÓRIA-RÉGIA E O GRANDE PEIXE PIRARUCU SÃO SERES VIVOS QUE MORAM NA ÁGUA DOCE. ELES SÃO TÍPICOS DE QUAL FAMOSO RIO BRASILEIRO? DIGITE O NOME DELE ABAIXO:</div>
-            <div class="text-input-container">
-                RESPOSTA: <input type="text" name="q14" class="exam-text-input" placeholder="DIGITE AQUI" autocomplete="off">
-                <span class="text-correction-feedback" id="feedback-q14"></span>
+        <div class="question-wrapper" data-qid="q14" data-qtype="radio">
+            <div class="question-heading">14. NO EXERCÍCIO DE LIGAR OS TIPOS DE ÁGUA, O MAR DEVE SER LIGADO CORRETAMENTE ÀS MASSAS DE:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q14" value="A"> ÁGUA DOCE.</label>
+                <label class="alternative-row"><input type="radio" name="q14" value="B"> ÁGUA SALGADA.</label>
             </div>
         </div>
 
         <div class="question-wrapper" data-qid="q15" data-qtype="radio">
-            <div class="question-heading">15. NEM TODOS OS ANIMAIS QUE VIVEM NA ÁGUA RESPIRAM DO MESMO JEITO. COMO O PEIXE-BOI E O POLVO FAZEM PARA RESPIRAR?</div>
+            <div class="question-heading">15. A PLANTA VITÓRIA-RÉGIA E O PEIXE PIRARUCU SÃO SERES VIVOS QUE CONSEGUEM VIVER EM AMBIENTE:</div>
             <div class="alternatives-container">
-                <label class="alternative-row"><input type="radio" name="q15" value="A"> O PEIXE-BOI PRECISA SUBIR ATÉ A SUPERFÍCIE PARA RESPIRAR O AR DO CÉU, ENQUANTO O POLVO CONSEGUE RESPIRAR O TEMPO TODO EMBAIXO DA ÁGUA.</label>
-                <label class="alternative-row"><input type="radio" name="q15" value="B"> O POLVO PRECISA SAIR DA ÁGUA PARA RESPIRAR NA TERRA E O PEIXE-BOI NUNCA RESPIRA AR.</label>
-                <label class="alternative-row"><input type="radio" name="q15" value="C"> OS DOIS CONSEGUEM VOAR PARA RESPIRAR NO AR FORA DA ÁGUA.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="A"> AQUÁTICO DE ÁGUA SALGADA.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="B"> AQUÁTICO DE ÁGUA DOCE.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="C"> AQUÁTICO DE ÁGUA DOCE OU SALGADA.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="D"> TERRESTRE.</label>
             </div>
         </div>
 
         <div class="control-panel">
-            <button type="button" id="btn-submit" class="btn-engine" onclick="processEvaluationEngine()">CORRIGIR PROVA</button>
-            <button type="button" id="btn-reset" class="btn-engine" onclick="resetEvaluationEngine()">REFAZER PROVA</button>
+            <button type="button" id="btn-submit" class="btn-engine" onclick="processEvaluationEngine()">CORRIGIR AVALIAÇÃO</button>
+            <button type="button" id="btn-reset" class="btn-engine" onclick="resetEvaluationEngine()">REFAZER EXAME</button>
         </div>
     </form>
 </div>
 
 <script>
     const answerKey = {
-        q1: "B", q2: "A", q3: "ar", q4: "A", q5: "B",
-        q6: "infancia", q7: "B", q8: "A", q9: "C", q10: "deserto",
-        q11: "B", q12: "doce", q13: "A", q14: "amazonas", q15: "A"
+        q1: "A", q2: "B", q3: "A", q4: "B", q5: "B",
+        q6: "B", q7: "D", q8: "D", q9: "A", q10: "C",
+        q11: "aquatico", q12: "terrestre", q13: "peixe", q14: "B", q15: "B"
     };
 
     let timerInterval = null;
@@ -449,7 +454,7 @@
         radios.forEach(radio => {
             radio.addEventListener('change', () => {
                 if (!examActive) return;
-                localStorage.setItem(`exam_save_${radio.name}`, radio.value);
+                localStorage.setItem(`exam_exact_save_${radio.name}`, radio.value);
             });
         });
 
@@ -457,14 +462,14 @@
         textInputs.forEach(input => {
             input.addEventListener('input', () => {
                 if (!examActive) return;
-                localStorage.setItem(`exam_save_${input.name}`, input.value);
+                localStorage.setItem(`exam_exact_save_${input.name}`, input.value);
             });
         });
     }
 
     function loadSavedState() {
         for (let q in answerKey) {
-            const savedValue = localStorage.getItem(`exam_save_${q}`);
+            const savedValue = localStorage.getItem(`exam_exact_save_${q}`);
             if (savedValue) {
                 const radioTarget = document.querySelector(`input[name="${q}"][value="${savedValue}"]`);
                 if (radioTarget) {
@@ -520,12 +525,12 @@
 
                 if (userText === correctText) {
                     inputElement.classList.add("input-correct");
-                    feedbackSpan.textContent = "ACERTOU!";
+                    feedbackSpan.textContent = "CORRETO";
                     feedbackSpan.style.color = "#137333";
                     rawScore++;
                 } else {
                     inputElement.classList.add("input-wrong");
-                    feedbackSpan.textContent = `ERROU (O CERTO É: ${answerKey[q].toUpperCase()})`;
+                    feedbackSpan.textContent = `INCORRETO (GABARITO: ${answerKey[q].toUpperCase()})`;
                     feedbackSpan.style.color = "#c5221f";
                 }
             }
@@ -534,7 +539,7 @@
         const finalGrade = ((rawScore / totalItems) * 10).toFixed(1);
         
         document.getElementById("grade-slot").textContent = `${finalGrade} / 10.0`;
-        document.getElementById("status-text").textContent = "CORRIGIDA";
+        document.getElementById("status-text").textContent = "CONCLUÍDA";
 
         document.getElementById("metric-score").textContent = rawScore;
         document.getElementById("metric-total").textContent = totalItems;
@@ -542,11 +547,11 @@
 
         const feedbackSlot = document.getElementById("metric-feedback");
         if (rawScore === totalItems) {
-            feedbackSlot.textContent = "PARABÉNS! VOCÊ ACERTOU TUDO E SABE TUDO SOBRE A MATÉRIA DE CIÊNCIAS!";
+            feedbackSlot.textContent = "EXCELENTE PROVEITO! GABARITO COMPLETO CONFORME AS ATIVIDADES DO LIVRO DIDÁTICO.";
         } else if (rawScore >= totalItems * 0.7) {
-            feedbackSlot.textContent = "MUITO BEM! VOCÊ TEVE UMA BOA NOTA. OLHE AS QUESTÕES EM VERMELHO PARA APRENDER O QUE ERROU.";
+            feedbackSlot.textContent = "BOM RENDIMENTO! REVISE AS QUESTÕES MARCADAS EM VERMELHO JUNTO AO LIVRO PARA FIXAR.";
         } else {
-            feedbackSlot.textContent = "VAMOS TREINAR MAIS UM POUCO? ESTUDE O LIVRO DE CIÊNCIAS E TENTE REFAZER A PROVA DEPOIS.";
+            feedbackSlot.textContent = "RECOMENDA-SE REVER AS ANOTAÇÕES DOS MÓDULOS 5 E 6 DO CADERNO E REPETIR O TESTE DE TREINO.";
         }
 
         document.getElementById("dashboard-result").style.display = "block";
@@ -558,7 +563,7 @@
 
     function resetEvaluationEngine() {
         for (let q in answerKey) {
-            localStorage.removeItem(`exam_save_${q}`);
+            localStorage.removeItem(`exam_exact_save_${q}`);
         }
 
         examActive = true;

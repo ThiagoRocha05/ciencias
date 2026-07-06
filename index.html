@@ -245,6 +245,624 @@
 
 <div class="exam-container">
     <div class="institution-header">AVALIAÇÃO DE CIÊNCIAS DA NATUREZA</div>
+    <div class="exam-meta-title">MÓDULOS 5 E 6: OS AMBIENTES E SEUS COMPONENTES</div>
+
+    <table class="student-info-table">
+        <tr>
+            <td colspan="2"><strong>ESTUDANTE:</strong> HELENA / VALENTINA</td>
+            <td style="width: 30%;"><strong>DATA:</strong> <span id="current-date">____/____/2026</span></td>
+        </tr>
+        <tr>
+            <td style="width: 45%;"><strong>SÉRIE:</strong> 1º ANO DO ENSINO FUNDAMENTAL</td>
+            <td style="width: 30%;"><strong>BIMESTRE:</strong> 2º BIMESTRE</td>
+            <td><strong>NOTA OBTIDA:</strong> <span id="grade-slot" style="font-weight: bold;">_________</span></td>
+        </tr>
+    </table>
+
+    <div class="system-widgets">
+        <div><strong>ESTADO DA PROVA:</strong> <span id="status-text">EM ANDAMENTO</span></div>
+        <div><strong>CRONÔMETRO DE TREINO:</strong> <span id="timer-text">00:00</span></div>
+    </div>
+
+    <div class="instructions-block">
+        <strong>INSTRUÇÕES:</strong> RESPONDA AS QUESTÕES COM ATENÇÃO. ALGUMAS PERGUNTAS SÃO PARA MARCAR UM X NA ALTERNATIVA CORRETA E OUTRAS SÃO PARA ESCREVER A PALAVRA COMPLETA NA LINHA DE RESPOSTA.
+    </div>
+
+    <div id="dashboard-result" class="dashboard-result">
+        <div class="dashboard-title">RESULTADO DO EXAME</div>
+        <div class="metric-line">TOTAL DE ACERTOS: <span id="metric-score" class="metric-highlight">0</span> DE <span id="metric-total">0</span> QUESTÕES</div>
+        <div class="metric-line">NOTA FINAL: <span id="metric-grade" class="metric-highlight">0.0</span> / 10.0</div>
+        <div class="metric-line" id="metric-feedback" style="margin-top: 15px; font-style: italic;"></div>
+    </div>
+
+    <form id="form-exam-engine">
+        
+        <!-- QUESTÃO 1 -->
+        <div class="question-wrapper" data-qid="q1" data-qtype="radio">
+            <div class="question-heading">1. NA NATUREZA EXISTEM DIVERSOS ELEMENTOS. OS ANIMAIS E AS PLANTAS SÃO CLASSIFICADOS COMO:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q1" value="A"> SERES VIVOS.</label>
+                <label class="alternative-row"><input type="radio" name="q1" value="B"> ELEMENTOS NÃO VIVOS.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 2 -->
+        <div class="question-wrapper" data-qid="q2" data-qtype="radio">
+            <div class="question-heading">2. A LUZ DO SOL, O AR, A ÁGUA, AS ROCHAS E O SOLO SÃO ESSENCIAIS PARA A VIDA, MAS ELES SÃO CLASSIFICADOS COMO:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q2" value="A"> SERES VIVOS DO AMBIENTE.</label>
+                <label class="alternative-row"><input type="radio" name="q2" value="B"> ELEMENTOS NÃO VIVOS DO AMBIENTE.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 3 -->
+        <div class="question-wrapper" data-qid="q3" data-qtype="radio">
+            <div class="question-heading">3. QUAIS DOS SERES VIVOS ABAIXO SÃO MAIS ADEQUADOS PARA VIVER NO AMBIENTE MARINHO (MAR E OCEANO)?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&fit=crop&w=1000&q=80" alt="Mar">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q3" value="A"> PEIXES E TARTARUGA MARINHA.</label>
+                <label class="alternative-row"><input type="radio" name="q3" value="B"> VACA E SER HUMANO.</label>
+                <label class="alternative-row"><input type="radio" name="q3" value="C"> PÁSSAROS E CAMELO.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 4 -->
+        <div class="question-wrapper" data-qid="q4" data-qtype="radio">
+            <div class="question-heading">4. EM UM AMBIENTE DE CAMPO AGROPECUÁRIO OU FAZENDA, QUAIS SERES VIVOS NÓS PODEMOS ENCONTRAR COM FACILIDADE?</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q4" value="A"> PEIXES DE MAR E TUBARÕES.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="B"> PÁSSAROS, VACA E SER HUMANO.</label>
+                <label class="alternative-row"><input type="radio" name="q4" value="C"> POLVO E ESTRELA-DO-MAR.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 5 -->
+        <div class="question-wrapper" data-qid="q5" data-qtype="radio">
+            <div class="question-heading">5. OBSERVE A IMAGEM DE UMA CRIANÇA COM SUA MÃE EM UM MUSEU. MARQUE A ALTERNATIVA VERDADEIRA SOBRE O CICLO DE VIDA:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?auto=format&fit=crop&w=1000&q=80" alt="Museu">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q5" value="A"> O MENINO JÁ ESTÁ NA FASE ADULTA.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="B"> O MENINO ESTÁ NA FASE DE CRESCIMENTO.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="C"> A MÃE DO MENINO JÁ COMPLETOU TODO O SEU CICLO DE VIDA.</label>
+                <label class="alternative-row"><input type="radio" name="q5" value="D"> A MÃE DO MENINO ESTÁ NA FASE DE CRESCIMENTO.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 6 -->
+        <div class="question-wrapper" data-qid="q6" data-qtype="radio">
+            <div class="question-heading">6. AO RETORNAR DE VIAGEM, MARINA ENCONTROU SUA PLANTA MURCHA EM UM CANTO ESCURO. O QUE PODE TER FALTADO PARA A PLANTA FICAR ASSIM?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Planta murcha">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q6" value="A"> APENAS O SOLO FIRME.</label>
+                <label class="alternative-row"><input type="radio" name="q6" value="B"> ÁGUA E LUZ DO SOL.</label>
+                <label class="alternative-row"><input type="radio" name="q6" value="C"> APENAS O AR DA SALA.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 7 -->
+        <div class="question-wrapper" data-qid="q7" data-qtype="radio">
+            <div class="question-heading">7. O SOLO É FUNDAMENTAL PARA A SOBREVIVÊNCIA DE DIVERSOS SERES VIVOS. MARQUE O ITEM QUE NÃO DEVE SER ENCONTRADO NO SOLO:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q7" value="A"> ANIMAIS (COMO MINHOCAS).</label>
+                <label class="alternative-row"><input type="radio" name="q7" value="B"> PLANTAS E RAÍZES.</label>
+                <label class="alternative-row"><input type="radio" name="q7" value="C"> ROCHAS E PEDRAS.</label>
+                <label class="alternative-row"><input type="radio" name="q7" value="D"> LIXO E POLUIÇÃO.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 8 -->
+        <div class="question-wrapper" data-qid="q8" data-qtype="radio">
+            <div class="question-heading">8. SOBRE A DIFERENÇA ENTRE VIVOS E NÃO VIVOS, MARQUE A AFIRMAÇÃO VERDADEIRA SOBRE OS ELEMENTOS NÃO VIVOS (COMO A ÁGUA E AS PEDRAS):</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q8" value="A"> ELES CRESCEM, MAS NUNCA MORREM.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="B"> ELES NASCEM E CRESCEM, MAS NÃO SE REPRODUZEM.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="C"> ELES TÊM UMA FASE EM QUE PODEM SE REPRODUZIR.</label>
+                <label class="alternative-row"><input type="radio" name="q8" value="D"> NÃO NASCEM, NÃO CRESCEM, NÃO SE REPRODUZEM NEM MORREM.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 9 -->
+        <div class="question-wrapper" data-qid="q9" data-qtype="radio">
+            <div class="question-heading">9. OBSERVE A FOTO DA VITÓRIA-RÉGIA EM UM LAGO. ELA É UMA PLANTA ADAPTADA PARA VIVER NA:</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1517088455889-bfa75135412c?auto=format&fit=crop&w=1000&q=80" alt="Vitoria regia">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q9" value="A"> ÁGUA.</label>
+                <label class="alternative-row"><input type="radio" name="q9" value="B"> TERRA SECA DO DESERTO.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 10 -->
+        <div class="question-wrapper" data-qid="q10" data-qtype="radio">
+            <div class="question-heading">10. QUAL É O NOME DO ANIMAL QUE APARECE NA FOTO ABAIXO, TÍPICO DE AMBIENTES QUENTES E SECOS?</div>
+            <img class="graphic-resource" src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=1000&q=80" alt="Camelo">
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q10" value="A"> SAPO.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="B"> ÁRVORE.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="C"> CAMELO.</label>
+                <label class="alternative-row"><input type="radio" name="q10" value="D"> VACA.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 11 (ESCRITA) -->
+        <div class="question-wrapper" data-qid="q11" data-qtype="text">
+            <div class="question-heading">11. OS AMBIENTES COBERTOS POR ÁGUA RECEBEM UM NOME ESPECIAL. O RIO É UM EXEMPLO DE AMBIENTE... (DIGITE A PALAVRA COMPLETA ABAIXO):</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q11" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q11"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 12 (ESCRITA) -->
+        <div class="question-wrapper" data-qid="q12" data-qtype="text">
+            <div class="question-heading">12. OS AMBIENTES QUE NÃO SÃO COBERTOS POR ÁGUA SÃO CHAMADOS DE OUTRA FORMA. O DESERTO É UM EXEMPLO DE AMBIENTE... (DIGITE A PALAVRA COMPLETA):</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q12" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q12"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 13 (ESCRITA) -->
+        <div class="question-wrapper" data-qid="q13" data-qtype="text">
+            <div class="question-heading">13. COMPLETE A FRASE SOBRE O HÁBITAT DOS ANIMAIS: O HÁBITAT DO _________ É O RIO OU O MAR. (DIGITE O NOME DO ANIMAL NA LINHA):</div>
+            <div class="text-input-container">
+                RESPOSTA: <input type="text" name="q13" class="exam-text-input" placeholder="ESCREVA AQUI" autocomplete="off">
+                <span class="text-correction-feedback" id="feedback-q13"></span>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 14 -->
+        <div class="question-wrapper" data-qid="q14" data-qtype="radio">
+            <div class="question-heading">14. OS AMBIENTES AQUÁTICOS PODEM SER DE ÁGUA DOCE OU SALGADA. O MAR E O OCEANO SÃO FORMADOS POR:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q14" value="A"> ÁGUA DOCE.</label>
+                <label class="alternative-row"><input type="radio" name="q14" value="B"> ÁGUA SALGADA.</label>
+            </div>
+        </div>
+
+        <!-- QUESTÃO 15 -->
+        <div class="question-wrapper" data-qid="q15" data-qtype="radio">
+            <div class="question-heading">15. A PLANTA VITÓRIA-RÉGIA E O PEIXE PIRARUCU SÃO SERES VIVOS QUE CONSEGUEM VIVER EM AMBIENTE:</div>
+            <div class="alternatives-container">
+                <label class="alternative-row"><input type="radio" name="q15" value="A"> AQUÁTICO DE ÁGUA SALGADA (NO MAR).</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="B"> AQUÁTICO DE ÁGUA DOCE (NOS RIOS E LAGOS).</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="C"> AQUÁTICO DE ÁGUA DOCE OU SALGADA TANTO FAZ.</label>
+                <label class="alternative-row"><input type="radio" name="q15" value="D"> TERRESTRE NO MEIO DA AREIA.</label>
+            </div>
+        </div>
+
+        <div class="control-panel">
+            <button type="button" id="btn-submit" class="btn-engine" onclick="processEvaluationEngine()">CORRIGIR AVALIAÇÃO</button>
+            <button type="button" id="btn-reset" class="btn-engine" onclick="resetEvaluationEngine()">REFAZER EXAME</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    const answerKey = {
+        q1: "A", q2: "B", q3: "A", q4: "B", q5: "B",
+        q6: "B", q7: "D", q8: "D", q9: "A", q10: "C",
+        q11: "aquatico", q12: "terrestre", q13: "peixe", q14: "B", q15: "B"
+    };
+
+    let timerInterval = null;
+    let secondsElapsed = 0;
+    let examActive = true;
+
+    window.addEventListener('DOMContentLoaded', () => {
+        startTimerEngine();
+        loadSavedState();
+        setupStateListeners();
+    });
+
+    function startTimerEngine() {
+        if(timerInterval) clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            if (!examActive) return;
+            secondsElapsed++;
+            const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+            const secs = String(secondsElapsed % 60).padStart(2, '0');
+            document.getElementById("timer-text").textContent = `${mins}:${secs}`;
+        }, 1000);
+    }
+
+    function setupStateListeners() {
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (!examActive) return;
+                localStorage.setItem(`exam_final_save_${radio.name}`, radio.value);
+            });
+        });
+
+        const textInputs = document.querySelectorAll('.exam-text-input');
+        textInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (!examActive) return;
+                localStorage.setItem(`exam_final_save_${input.name}`, input.value);
+            });
+        });
+    }
+
+    function loadSavedState() {
+        for (let q in answerKey) {
+            const savedValue = localStorage.getItem(`exam_final_save_${q}`);
+            if (savedValue) {
+                const radioTarget = document.querySelector(`input[name="${q}"][value="${savedValue}"]`);
+                if (radioTarget) {
+                    radioTarget.checked = true;
+                } else {
+                    const textTarget = document.querySelector(`input[name="${q}"][type="text"]`);
+                    if (textTarget) textTarget.value = savedValue;
+                }
+            }
+        }
+    }
+
+    function normalizeString(str) {
+        if (!str) return "";
+        return str.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function processEvaluationEngine() {
+        examActive = false;
+        clearInterval(timerInterval);
+        
+        const form = document.getElementById("form-exam-engine");
+        let rawScore = 0;
+        const totalItems = Object.keys(answerKey).length;
+
+        for (let q in answerKey) {
+            const wrapper = document.querySelector(`[data-qid="${q}"]`);
+            const type = wrapper.getAttribute("data-qtype");
+
+            if (type === "radio") {
+                const selectedRadio = form.elements[q] ? form.elements[q].value : null;
+                const rows = wrapper.querySelectorAll(".alternative-row");
+
+                rows.forEach(row => {
+                    const radioInput = row.querySelector("input");
+                    radioInput.disabled = true;
+
+                    if (radioInput.value === answerKey[q]) {
+                        row.classList.add("state-correct");
+                    } else if (selectedRadio === radioInput.value && selectedRadio !== answerKey[q]) {
+                        row.classList.add("state-wrong");
+                    }
+                });
+
+                if (selectedRadio === answerKey[q]) rawScore++;
+
+            } else if (type === "text") {
+                const inputElement = wrapper.querySelector(".exam-text-input");
+                inputElement.disabled = true;
+                const userText = normalizeString(inputElement.value);
+                const correctText = normalizeString(answerKey[q]);
+                const feedbackSpan = document.getElementById(`feedback-${q}`);
+
+                if (userText === correctText) {
+                    inputElement.classList.add("input-correct");
+                    feedbackSpan.textContent = "CORRETO";
+                    feedbackSpan.style.color = "#137333";
+                    rawScore++;
+                } else {
+                    inputElement.classList.add("input-wrong");
+                    feedbackSpan.textContent = `INCORRETO (GABARITO: ${answerKey[q].toUpperCase()})`;
+                    feedbackSpan.style.color = "#c5221f";
+                }
+            }
+        }
+
+        const finalGrade = ((rawScore / totalItems) * 10).toFixed(1);
+        
+        document.getElementById("grade-slot").textContent = `${finalGrade} / 10.0`;
+        document.getElementById("status-text").textContent = "CONCLUÍDA";
+
+        document.getElementById("metric-score").textContent = rawScore;
+        document.getElementById("metric-total").textContent = totalItems;
+        document.getElementById("metric-grade").textContent = finalGrade;
+
+        const feedbackSlot = document.getElementById("metric-feedback");
+        if (rawScore === totalItems) {
+            feedbackSlot.textContent = "EXCELENTE PROVEITO! GABARITO COMPLETO CONFORME AS ATIVIDADES DO LIVRO DIDÁTICO.";
+        } else if (rawScore >= totalItems * 0.7) {
+            feedbackSlot.textContent = "BOM RENDIMENTO! REVISE AS QUESTÕES MARCADAS EM VERMELHO PARA FIXAR O CONTEÚDO.";
+        } else {
+            feedbackSlot.textContent = "RECOMENDA-SE REVER AS ANOTAÇÕES DOS MÓDULOS 5 E 6 DO CADERNO E REPETIR O TESTE DE TREINO.";
+        }
+
+        document.getElementById("dashboard-result").style.display = "block";
+        document.getElementById("btn-submit").style.display = "none";
+        document.getElementById("btn-reset").style.display = "inline-block";
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetEvaluationEngine() {
+        for (let q in answerKey) {
+            localStorage.removeItem(`exam_final_save_${q}`);
+        }
+
+        examActive = true;
+        secondsElapsed = 0;
+        document.getElementById("timer-text").textContent = "00:00";
+        document.getElementById("status-text").textContent = "EM ANDAMENTO";
+        document.getElementById("grade-slot").textContent = "_________";
+        document.getElementById("dashboard-result").style.display = "none";
+        
+        const form = document.getElementById("form-exam-engine");
+        form.reset();
+
+        document.querySelectorAll(".alternative-row").forEach(row => {
+            row.classList.remove("state-correct", "state-wrong");
+            const input = row.querySelector("input");
+            input.disabled = false;
+        });
+
+        document.querySelectorAll(".exam-text-input").forEach(input => {
+            input.classList.remove("input-correct", "input-wrong");
+            input.disabled = false;
+        });
+
+        document.querySelectorAll(".text-correction-feedback").forEach(span => {
+            span.textContent = "";
+        });
+
+        document.getElementById("btn-submit").style.display = "inline-block";
+        document.getElementById("btn-reset").style.display = "none";
+
+        startTimerEngine();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVALIAÇÃO DE CIÊNCIAS - PRIMEIRO ANO</title>
+    <style>
+        * {
+            box-shadow: none;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f7f9fa;
+            color: #000000;
+            margin: 0;
+            padding: 40px 15px;
+            line-height: 1.6;
+        }
+        .exam-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            padding: 50px 40px;
+            position: relative;
+        }
+        .institution-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .exam-meta-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 30px;
+            border-bottom: 3px double #000000;
+            padding-bottom: 12px;
+            text-transform: uppercase;
+        }
+        .student-info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 35px;
+        }
+        .student-info-table td {
+            border: 1px solid #000000;
+            padding: 12px;
+            font-size: 12pt;
+            text-transform: uppercase;
+        }
+        .system-widgets {
+            background-color: #fcfcfc;
+            border: 1px dashed #000000;
+            padding: 12px 20px;
+            margin-bottom: 30px;
+            font-size: 11pt;
+            display: flex;
+            justify-content: space-between;
+        }
+        .instructions-block {
+            font-size: 11pt;
+            margin-bottom: 40px;
+            text-align: justify;
+            text-transform: uppercase;
+        }
+        .question-wrapper {
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px dotted #dddddd;
+        }
+        .question-wrapper:last-of-type {
+            border-bottom: none;
+        }
+        .question-heading {
+            font-size: 13pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-transform: uppercase;
+        }
+        .graphic-resource {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            max-height: 280px;
+            margin: 18px 0;
+            border: 1px solid #000000;
+            object-fit: cover;
+        }
+        .alternatives-container {
+            margin-left: 10px;
+        }
+        .alternative-row {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 12pt;
+            cursor: pointer;
+            padding: 8px 12px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            text-transform: uppercase;
+        }
+        .alternative-row:hover {
+            background-color: #f5f5f5;
+        }
+        .alternative-row input[type="radio"] {
+            margin-top: 5px;
+            margin-right: 12px;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        .text-input-container {
+            margin-left: 10px;
+            margin-top: 15px;
+            font-size: 12pt;
+            text-transform: uppercase;
+        }
+        .exam-text-input {
+            border: none;
+            border-bottom: 1px solid #000000;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13pt;
+            width: 300px;
+            padding: 4px 8px;
+            outline: none;
+            background-color: transparent;
+            color: #000000;
+            text-transform: uppercase;
+        }
+        .exam-text-input:focus {
+            border-bottom: 2px solid #000000;
+        }
+        .text-correction-feedback {
+            display: inline-block;
+            margin-left: 15px;
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .control-panel {
+            text-align: center;
+            margin-top: 50px;
+            border-top: 2px solid #000000;
+            padding-top: 30px;
+        }
+        .btn-engine {
+            background-color: #ffffff;
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 14px 40px;
+            font-size: 13pt;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 10px;
+            transition: all 0.2s ease;
+        }
+        .btn-engine:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        #btn-reset {
+            border-color: #888888;
+            color: #555555;
+            display: none;
+        }
+        #btn-reset:hover {
+            background-color: #888888;
+            color: #ffffff;
+        }
+        .dashboard-result {
+            display: none;
+            border: 3px solid #000000;
+            padding: 30px;
+            margin-bottom: 40px;
+            background-color: #fafafa;
+            text-transform: uppercase;
+        }
+        .dashboard-title {
+            font-size: 16pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .metric-line {
+            font-size: 13pt;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .metric-highlight {
+            font-weight: bold;
+            font-size: 15pt;
+        }
+        .state-correct {
+            background-color: #e6f4ea !important;
+            border: 1px solid #137333 !important;
+            color: #137333;
+            font-weight: bold;
+        }
+        .state-wrong {
+            background-color: #fce8e6 !important;
+            border: 1px solid #c5221f !important;
+            color: #c5221f;
+        }
+        .input-correct {
+            background-color: #e6f4ea !important;
+            border-bottom: 2px solid #137333 !important;
+            color: #137333;
+        }
+        .input-wrong {
+            background-color: #fce8e6 !important;
+            border-bottom: 2px solid #c5221f !important;
+            color: #c5221f;
+        }
+        @media print {
+            body {
+                background-color: #ffffff;
+                padding: 0;
+            }
+            .exam-container {
+                border: none;
+                padding: 0;
+            }
+            .btn-engine, .system-widgets, .dashboard-result {
+                display: none !important;
+            }
+            .exam-text-input {
+                border-bottom: 1px solid #000000 !important;
+                background-color: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="exam-container">
+    <div class="institution-header">AVALIAÇÃO DE CIÊNCIAS DA NATUREZA</div>
     <div class="exam-meta-title">MÓDULOS 5 E 6 DO LIVRO DIDÁTICO</div>
 
     <table class="student-info-table">
